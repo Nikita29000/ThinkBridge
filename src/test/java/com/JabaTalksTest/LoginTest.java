@@ -17,14 +17,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class LoginTest extends JabaTalksPageObject {
 	JabaTalksPageObject jaba = new JabaTalksPageObject();
 	
-	@BeforeMethod
-	public void setProperty() {
-		WebDriverManager.chromedriver().setup();
-	}
-	
-
 	@BeforeTest
 	public void launchUrl() {
+		WebDriverManager.chromedriver().setup();
+
 	//	System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Driver\\chromedriver.exe"); 
 		driver = new ChromeDriver();
 		driver.get("https://jt-dev.azurewebsites.net/#/SignUp");
@@ -47,10 +43,6 @@ public class LoginTest extends JabaTalksPageObject {
 		
 	}
 	
-	@AfterMethod
-	public void deleteAllCookies() {
-		driver.manage().deleteAllCookies();
-	}
 
 
 
